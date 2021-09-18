@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/js/uikit-icons.min.js"></script>
+    <!--added the script file -->
+    <script src="assets/js/konfeti.js" defer></script>
+    <script src="assets/js/index.js"></script>
+    <!--added the style file -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <title>Ayşegül TOPYÜREK - Patika - Ödev 1</title>
+    
+</head>
+<!-- We have a div with a wrapper class inside the body that includes the header, main and footer-->
+<body>
+    <div id="modalWrapper">
+    <canvas id="world"></canvas>
+        <div id="modal">
+            <div class="modalHeader">
+                <div class="btnSet">
+                    <a onclick="closeModal()"><span uk-icon="close"></span></a>
+                </div>
+            </div>
+            <div class="modalBody">
+                 <div class="dataRow">
+                     <span>Company Name:</span>
+                     <p class="CompanyName"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>First Name:</span>
+                     <p class="FirstName"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>Last Name:</span>
+                     <p class="LastName"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>Email Address:</span>
+                     <p class="EmailAddress"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>Title:</span>
+                     <p class="Title"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>Phone:</span>
+                     <p class="Phone"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>Cancel Registration:</span>
+                     <p class="CancelRegistration"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>252 Training Session 2021:</span>
+                     <p class="TrainingSession"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>Job Function:</span>
+                     <p class="JobFunction"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>Dietary Requirements:</span>
+                     <p class="DietaryRequirements"></p>
+                 </div>
+                 <div class="dataRow">
+                     <span>Expectations:</span>
+                     <p class="Expectations"></p>
+                 </div>
+            </div>
+            <div class="modalFooter">
+                <div class="btnSet">
+                    <button onclick="closeModal()"><span uk-icon="check"></span> Okay!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="wrapper">
+        <header>
+            <nav>
+                <img src="assets/img/logo-new-ciceksepeti.png" alt="Brand Logo">
+                <div class="searchBox">
+                    <div class="icon">
+                        <span uk-icon="search"></span>
+                    </div>
+                    <div class="input">
+                        <input oninput="typing()" type="search" name="search" id="search" placeholder="Search">
+                    </div>
+                    
+                </div>
+                <span class="user" uk-icon="user"></span>
+                <a onclick="showMenu()" class="showMenu">
+                    <span uk-icon="menu"></span>
+                </a>
+                <a onclick="closeMenu()" class="closeMenu">
+                    <span uk-icon="close"></span>
+                </a>
+            </nav>
+        </header>
+        <main>
+            <aside>
+                <a href="#" onclick="formVisibility()" class="btn">Forms</a>
+                <a href="#" onclick="imgGridVisibility()" class="btn">Products</a>
+            </aside>
+            <div id="content">
+                <div class="form">
+                    <form name="homework">
+                        <div class="item">
+                            <label for="companyName">Company Name:</label>
+                            <input type="text" id="companyName" required>
+                        </div>
+                        <div class="item">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="item">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                        <div class="item">
+                            <label for="emailAddress">Email Address:</label>
+                            <input type="email" id="emailAddress" required>
+                        </div>
+                        <div class="item">
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" required>
+                        </div>
+                        <div class="item">
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" required>
+                        </div>
+                        <div class="item">
+                            <label for="cancelRegistration">Cancel Registration:</label>
+                            <input checked type="checkbox" id="cancelRegistration" required>
+                        </div>
+                        <div class="item">
+                            <label for="traninig">252 Training Session 2021:</label>
+                            <select name="traninig" id="traninig" required>
+                                <option value="-Select a date-">-Select a date-</option>
+                                <option value="Ayşegül Topyürek">Ayşegül Topyürek</option>
+                            </select>
+                        </div>
+                        <div class="item">
+                            <div class="col1">
+                                <label>Job Function:</label>
+                            </div>
+                            <div class="col2">
+                                <div class="input">
+                                    <input type="radio" value="Campaign Management" name="job" id="job1" required>
+                                    <label for="job1">Campaign Management</label>
+                                </div>
+                                <div class="input">
+                                    <input type="radio" value="CRM Administration" name="job" id="job2" required>
+                                    <label for="job2">CRM Administration</label>
+                                </div>
+                                <div class="input">
+                                    <input type="radio" value="Email Deployment" name="job" id="job3" required>
+                                    <label for="job3">Email Deployment</label>
+                                </div>
+                                <div class="input">
+                                    <input type="radio" value="Partner" name="job" id="job4" required>
+                                    <label for="job4">Partner</label>
+                                </div>
+                                <div class="input">
+                                    <input type="radio" value="Employee" name="job" id="job5" required>
+                                    <label for="job5">Employee</label>
+                                </div>
+                            </div>
+                        
+                            
+                        </div>
+                        <div class="item">
+                            <label for="dietary">Dietary Requirements:</label>
+                            <input type="text" id="dietary" required>
+                        </div>
+                        <div class="item">
+                            <label for="expectations">Expectations:</label>
+                            <textarea name="expectations" id="expectations" cols="30" rows="10" required></textarea>
+                        </div>
+                        <div class="item">
+                            <div></div>
+                            <a href="#" onclick="showModal()" type="submit">Submit</a>
+                        </div>
+                    </form>
+                </div>
+              
+                <div class="imgGrid" >
+                    <div class="products" id="products">
+                     
+                     
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Developed by Ayşegül TOPYÜREK with <span uk-icon="heart"></span></p>
+        </footer>
+    </div>
+</body>
+</html>
